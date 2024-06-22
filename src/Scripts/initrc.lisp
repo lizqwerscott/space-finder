@@ -1,0 +1,3 @@
+(defun init ()
+  (printLog "Hello"))
+
