@@ -35,16 +35,9 @@ void BoxBase::DrawBoxUi(std::string name, int row, int column)
         ImGui::TableSetupColumn(quality.c_str());
         ImGui::TableHeadersRow();
         if (isEmpty()) {
-            for (int i = 0; i < row; i++) {
-                ImGui::TableNextColumn();
-                ImGui::Button(std::string("Null").c_str());
-                for (int j = 0; j < column - 1; j++) {
-                    ImGui::TableNextColumn();
-                    ImGui::Button(std::string("").c_str());
-                }
-            }
+            ImGui::TableNextColumn();
+            ImGui::Button(std::string("Empty").c_str());
         }
-        int i = 0;
         for (auto iter : m_container) {
             if (!iter.second.empty()) {
                 auto item = std::string(iter.first);
@@ -58,7 +51,6 @@ void BoxBase::DrawBoxUi(std::string name, int row, int column)
                         ItemTManager::disDrag();
                     }
                 }
-                i++;
             }
         }
         ImGui::EndTable();

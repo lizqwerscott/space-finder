@@ -113,7 +113,8 @@ void Person::init()
     });
     //Bag
     Graphic::insertKeyCallBack(sf::Keyboard::Tab, GetId(), [this]() -> void {
-        SetDrawUi(!GetDrawUi());
+        // SetDrawUi(!GetDrawUi());
+        m_isDrawUi = !m_isDrawUi;
     });
 
     //hand

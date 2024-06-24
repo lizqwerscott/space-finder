@@ -18,6 +18,10 @@ public:
     virtual void init() override;
     virtual void UpdateSelf(sf::Time &dt) override;
     virtual void DrawUiSelf() override;
+
+    void initBase();
+    void initItem();
+    void initEntity();
 private:
     b2Vec2 speed;
 };
